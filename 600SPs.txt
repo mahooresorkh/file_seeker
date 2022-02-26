@@ -1,0 +1,7 @@
+sp_Select_InsuranceInfo
+sp_Select_IsFirstTimeBuyer_DelMe
+sp_Select_IsFrom500
+sp_Select_LoyaltyCar
+sp_Select_MethodTypes
+sp_Select_MLM
+sp_Select_MLMPhone
