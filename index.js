@@ -10,17 +10,16 @@ fs.readFile('600SPs.txt', 'utf8', function (err,data) {
     const lines = data.split(/\r?\n/);  
 
     //make sure there is no white spaces
-    const trimmedLines = lines.map(line=>line.trim());
+    const trimmedLines = lines.map(line=> line.trim());
 
     //show a message to user to wait till async task is finished.
     console.log("please wait...");
-
     //create a regex to match any of the keywords while searching files.
-    const regExText = trimmedLines.join("|");
-    
+    const boundryTrimmedLines = trimmedLines.map(value=>(`\\b${value}\\b`));
+    const regExText = boundryTrimmedLines.join("|");
     //call find function of find-in-files package which can search through all of the files 
     // in the given directory and its sub directories that have .cs format
-    seeker.find(regExText, "D:\\Bahar\\newBahar",".cs$")
+    seeker.find(regExText, "D:\\Bahar\\newBahar","\.cs$")
     .then(res=>{
         //res is based on files pathes having the keywords
         //what is intended is keywords based on the file pathes
